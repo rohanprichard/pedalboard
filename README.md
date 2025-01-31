@@ -11,13 +11,13 @@ It is designed to be used with any MIDI software that supports USB-MIDI. However
 - **3D-printed pedals** with momentary push buttons set
 
 ## Parts List
-| Component                  | Quantity |
-|----------------------------|----------|
-| Arduino Leonardo           | 2        |
-| Momentary push buttons  | 29       |
-| Jumper wires               | 50+      |
-| Breadboard (optional)       | 2        |
-| USB cables (Micro/Mini)     | 2        |
+| Component            | Quantity |
+|---------------------|----------|
+| Arduino Leonardo    | 2        |
+| Momentary push buttons | 29    |
+| Jumper wires        | 50+      |
+| Breadboard (optional) | 2      |
+| USB cables (Micro/Mini) | 2    |
 
 ## Wiring Guide 🔌
 ### **Arduino #1 (First 14 notes: C0–F1)**
@@ -82,7 +82,7 @@ This project is **open-source** under the **MIT License**, meaning you are free 
 - **Expand Compatibility**:
   - Support additional MIDI mappings.
   - Integrate with alternative microcontrollers.
-  
+
 ---
  This project is open-source and community-driven. Let's build something amazing together! 🚀
 
