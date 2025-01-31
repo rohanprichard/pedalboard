@@ -1,0 +1,6 @@
+remote_theme: pages-themes/merlot@v0.2.0
+plugins:
+- jekyll-remote-theme
+
+title: [Pedalboard]
+description: [A project to build a 29-note MIDI pedalboard for an organ using Arduino. Open source and free to use.]
