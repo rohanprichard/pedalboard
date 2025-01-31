@@ -82,6 +82,7 @@ This project is **open-source** under the **MIT License**, meaning you are free 
 - **Expand Compatibility**:
   - Support additional MIDI mappings.
   - Integrate with alternative microcontrollers.
+  
 ---
  This project is open-source and community-driven. Let's build something amazing together! 🚀
 
