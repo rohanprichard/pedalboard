@@ -33,8 +33,8 @@ It is designed to be used with any MIDI software that supports USB-MIDI. However
   - The other side connects to **GND**.
 
 ## Diagram 📊
-![Pedalboard Diagram](./assets/Pedalboard.png)
-
+Circuit connection Diagram: ![Pedalboard Diagram](./assets/Pedalboard.png)
+<a href="./assets/Pedalboard-Schematic.pdf">Pedalboard-Schematic.pdf</a>
 ## Setup & Usage 🎹 💻 🎧 
 1. **Upload the sketches** to the respective **Arduino Leonardo** boards using the Arduino IDE.
 2. **Connect both Arduinos** to the computer via USB.
