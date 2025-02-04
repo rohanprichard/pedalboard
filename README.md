@@ -5,19 +5,41 @@ This project is a **29-note MIDI pedalboard** for an organ, built using two **Ar
 
 It is designed to be used with any MIDI software that supports USB-MIDI. However, the main usecase is to be used with Hauptwerk.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D_P4T568hAM?si=8888888888888888" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Features 🌟
 - **29-note range** (C0 to E2)
 - **Plug-and-play USB MIDI** 
 - **3D-printed pedals** with momentary push buttons set
 
 ## Parts List
-| Component | Quantity |
-|-----------|----------|
-| Arduino Leonardo | 2 |
-| Momentary push buttons | 29 |
-| Jumper wires | 50+ |
-| Breadboard (optional) | 2 |
-| USB cables (Micro/Mini) | 2 |
+
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td>Arduino Leonardo</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Momentary push buttons</td>
+    <td>29</td>
+  </tr>
+  <tr>
+    <td>Jumper wires</td>
+    <td>50+</td>
+  </tr>
+  <tr>
+    <td>Breadboard (optional)</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>USB cables (Micro/Mini)</td>
+    <td>2</td>
+  </tr>
+</table>
 
 ## Wiring Guide 🔌
 ### **Arduino #1 (First 14 notes: C0–F1)**
