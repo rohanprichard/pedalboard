@@ -1,111 +1,54 @@
-# MIDI Pedalboard Project 🎹
+# 29-Note MIDI Organ Pedalboard
 
-## Overview 📖
-This project is a **29-note MIDI pedalboard** for an organ, built using two **Arduino Leonardo** boards. Each board is recognized as a **native USB-MIDI device**, allowing it to send MIDI messages directly to a computer without additional software. The pedals are made from 3D-printed components and use momentary push buttons.
+A DIY 29-note MIDI pedalboard for organ software, built with two Arduino Leonardo boards and 3D-printed pedals. Each board appears as a native USB-MIDI device, so the pedalboard connects directly to a computer without custom drivers.
 
-It is designed to be used with any MIDI software that supports USB-MIDI. However, the main usecase is to be used with Hauptwerk.
+## Demo and build assets
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D_P4T568hAM?si=8888888888888888" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+- [Watch the build/demo on YouTube](https://www.youtube.com/watch?v=D_P4T568hAM)
+- [Circuit diagram](assets/Pedalboard.png)
+- [Schematic PDF](assets/Pedalboard-Schematic.pdf)
 
-## Features 🌟
-- **29-note range** (C0 to E2)
-- **Plug-and-play USB MIDI** 
-- **3D-printed pedals** with momentary push buttons set
+## What it does
 
-## Parts List
+- maps pedals from C0 to E2 to MIDI note messages
+- splits the wiring across two Arduino Leonardo boards
+- works with Hauptwerk, GrandOrgue, DAWs, and other USB-MIDI-capable software
 
-<table>
-  <tr>
-    <th>Component</th>
-    <th>Quantity</th>
-  </tr>
-  <tr>
-    <td>Arduino Leonardo</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>Momentary push buttons</td>
-    <td>29</td>
-  </tr>
-  <tr>
-    <td>Jumper wires</td>
-    <td>50+</td>
-  </tr>
-  <tr>
-    <td>Breadboard (optional)</td>
-    <td>2</td>
-  </tr>
-  <tr>
-    <td>USB cables (Micro/Mini)</td>
-    <td>2</td>
-  </tr>
-</table>
+## Hardware
 
-## Wiring Guide 🔌
-### **Arduino #1 (First 14 notes: C0–F1)**
-- **Pins Used**: 2–13, A0  
-- **Wiring**:
-  - One side of each button goes to an **Arduino pin**.
-  - The other side connects to **GND**.
+| Part | Quantity |
+| --- | ---: |
+| Arduino Leonardo | 2 |
+| Momentary push buttons | 29 |
+| Jumper wires | 50+ |
+| USB cables | 2 |
+| Breadboard | Optional |
+| 3D-printed pedal components | As required |
 
-### **Arduino #2 (Next 11 notes: F#1–E2)**
-- **Pins Used**: 2–12  
-- **Wiring**:
-  - One side of each button goes to an **Arduino pin** with its pull-up resistor enabled.
-  - The other side connects to **GND**.
+## Wiring
 
-## Diagram 📊
-Circuit connection Diagram: ![Pedalboard Diagram](./assets/Pedalboard.png)
-<a href="./assets/Pedalboard-Schematic.pdf">Pedalboard-Schematic.pdf</a>
-## Setup & Usage 🎹 💻 🎧 
-1. **Upload the sketches** to the respective **Arduino Leonardo** boards using the Arduino IDE.
-2. **Connect both Arduinos** to the computer via USB.
-3. The devices will be detected as **MIDI controllers**.
-4. Open any **MIDI-compatible software** (Hauptwerk, GrandOrgue, DAW, etc.) and assign the MIDI inputs.
-5. **Test the keys** by pressing the pedals and ensuring the correct MIDI notes are sent.
+- **Board 1:** the first 14 notes, C0–F1; uses pins 2–13 and A0.
+- **Board 2:** the remaining notes, F#1–E2; uses pins 2–12.
+- Connect each switch between its assigned input and ground; the sketches use internal pull-up resistors.
 
-## Troubleshooting 🤔
-- **Some keys are not responding?**
-  - Check the wiring (ensure one side of the button is connected to the correct pin and the other to **GND**).
-  - Verify that the **Arduino pins are set to INPUT_PULLUP**.
-- **Arduino not detected as MIDI device?**
-  - Make sure you're using an **Arduino Leonardo** (or another board with native USB-MIDI support).
-  - Try a different USB cable/port.
-- **Buttons triggering multiple notes?**
-  - Ensure there are no accidental short circuits between button connections.
-  - Make sure that all the pins in the arduino are connected, or there may be weird glitches like this.
+Refer to the [schematic](assets/Pedalboard-Schematic.pdf) before powering the boards.
 
-## Future Improvements 🔮
-- Add a **multiplexer** to use a single Arduino for all notes.
-- Implement **velocity sensitivity** using force-sensitive resistors (FSRs) instead of basic push buttons.
-- Add potentiometers to control the velocity of the notes.
+## Upload and use
 
----
+1. Open `sketches/lower_pedalboard.ino` and `sketches/upper_pedalboard.ino` in the Arduino IDE.
+2. Select the correct Arduino Leonardo board and upload each sketch.
+3. Connect both boards over USB.
+4. Open MIDI-capable software and select the two MIDI inputs.
+5. Verify each pedal sends the intended note before performance use.
 
-## Open Source Contribution 🤝
-This project is **open-source** under the **MIT License**, meaning you are free to use, modify, and distribute it with proper attribution. If you improve or extend the project, consider contributing back!
+`sketches/teensy_pedalboard.ino` is an alternative implementation for compatible Teensy hardware.
 
-### How to Contribute 
-1. **Fork the repository** on GitHub.
-2. **Clone your fork** and make modifications.
-3. **Submit a pull request (PR)** with a detailed description of your changes.
-4. Your PR will be reviewed, and if accepted, it will be merged into the main branch.
+## Troubleshooting
 
-### Ideas for Contributions 💡
-- **Hardware Enhancements**:
-  - Improve the pedal design.
-  - Explore different button mechanisms (e.g., optical switches).
-- **Software Features**:
-  - Implement **velocity sensitivity**.
-  - Add support for **MIDI CC messages** for pedal dynamics.
-- **Code Optimization**:
-  - Refactor the MIDI message handling.
-  - Improve latency and responsiveness.
-- **Expand Compatibility**:
-  - Support additional MIDI mappings.
-  - Integrate with alternative microcontrollers.
----
- This project is open-source and community-driven. Let's build something amazing together! 🚀
+- Missing notes: verify the pin map and ground connection for that switch.
+- No MIDI device: confirm the board supports native USB MIDI and try a data-capable USB cable.
+- Duplicate notes: inspect the wiring and the use of `INPUT_PULLUP`.
 
-## License 📜
-This project is open-source under the MIT License. See the LICENSE file for more details.
+## License
+
+MIT
